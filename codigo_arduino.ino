@@ -1,7 +1,7 @@
 #include "DHT.h"        // inclui a biblioteca
 #define dht_type DHT11  // define o modelo (tipo) do sensor
 
-int dht_pin = A5;                    // nomeia o pino A5 conectado ao sensor
+int dht_pin = A1;                    // nomeia o pino A1 conectado ao sensor
 DHT dht_1 = DHT(dht_pin, dht_type);  // cria o sensor dht_1 e envia para a biblioteca suas informações de modelo e pino
 
 void setup() {         // só acontece uma vez no código
@@ -29,29 +29,10 @@ void loop() {
   }
 
   else {
-    Serial.print("Umidade:");
+    
     Serial.print(umidade);
     Serial.print(", ");
-    Serial.print("U_Máxima:");
-    Serial.print(umidadeMax);
-    Serial.print(", ");
-    Serial.print("U_Mínima:");
-    Serial.print(umidadeMin);
-    Serial.print(", ");
-    Serial.print("U_Fictícia:");
-    Serial.print(umidadeIdeal);
-    Serial.print(", ");
-    Serial.print("Temperatura:");
     Serial.print(temperatura);
-    Serial.print(", ");
-    Serial.print("T_Máxima:");
-    Serial.print(temperaturaMax);
-    Serial.print(", ");
-    Serial.print("T_Mínima:");
-    Serial.print(temperaturaMin);
-    Serial.print(", ");
-    Serial.print("T_Fictícia:");
-    Serial.println(temperaturaIdeal);
   }
   delay(1000);  // faz uma leitura a cada 1 segundo
 }
